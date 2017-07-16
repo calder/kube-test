@@ -1,4 +1,4 @@
-load("@io_bazel_rules_docker//docker:docker.bzl", "docker_build")
+load("@docker_rules//docker:docker.bzl", "docker_build")
 
 cc_binary(
     name = "hello",
