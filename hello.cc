@@ -2,8 +2,9 @@
 #include "hello.grpc.pb.h"
 
 class HelloServiceImpl final : public HelloService::Service {
-  grpc::Status Hello(grpc::ServerContext* context, const HelloRequest* request,
-                  HelloResponse* response) override {
+  grpc::Status Hello(grpc::ServerContext* context,
+                     const HelloRequest* request,
+                     HelloResponse* response) override {
     response->set_message("Hello, " + request->name() + "!");
     return grpc::Status::OK;
   }

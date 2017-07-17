@@ -1,0 +1,4 @@
+#!/bin/sh
+
+bazel run //:hello_img || exit $status
+docker run -p 50051:50051 bazel:hello_img || exit $status

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+grpc_cli call localhost:50051 HelloService.Hello "name: 'Kalee'" || exit $status
