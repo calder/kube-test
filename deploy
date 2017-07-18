@@ -1,4 +1,7 @@
 #!/bin/sh
 
-bazel run //:hello_img || exit $status
-docker run -p 50051:50051 bazel:hello_img || exit $status
+bazel build //:hello_img || exit $status
+docker load -i bazel-bin/hello_img.tar || exit $status
+
+kubectl delete -f hello.yaml
+kubectl create -f hello.yaml || exit $status

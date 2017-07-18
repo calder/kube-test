@@ -24,4 +24,5 @@ docker_build(
     base = "@cc_base//image:image.tar",
     cmd = ["/hello"],
     files = [":hello"],
+    ports = ["50051"],
 )
